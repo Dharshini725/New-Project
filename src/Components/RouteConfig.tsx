@@ -1,14 +1,14 @@
 //import React from 'react'
 import { BrowserRouter , Route, Routes } from 'react-router-dom';
-import HomePage from '../Pages/Homepage';
-import Explorepage from '../Pages/Explorepage';
+import Header from '../Pages/Header';
+
 const RouteConfig = () => {
   return (
     <div>
       <BrowserRouter>
        <Routes >
-        <Route path='/' element={<HomePage />} />
-        <Route path='/Explorepage/:id' element={<Explorepage />} />
+        <Route path='/' element={<Header />} />
+
       </Routes>
       </BrowserRouter>
      
@@ -16,4 +16,4 @@ const RouteConfig = () => {
   )
 }
 
-export default RouteConfig
+export default RouteConfig

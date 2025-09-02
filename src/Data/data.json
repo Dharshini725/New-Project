@@ -1,0 +1,25 @@
+{
+  "sites": [
+    {
+      "id": 1,
+      "location": "delhi",
+      "name": "Red Fort",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Red_Fort_India_2020.jpg/800px-Red_Fort_India_2020.jpg",
+      "description": "Historic fort in Delhi that served as the Mughal emperors' residence."
+    },
+    {
+      "id": 2,
+      "location": "delhi",
+      "name": "Qutub Minar",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Qutub_Minar_2023.jpg/800px-Qutub_Minar_2023.jpg",
+      "description": "A 73-meter tall tower built in 1193 by Qutb-ud-din Aibak."
+    },
+    {
+      "id": 3,
+      "location": "tamil nadu",
+      "name": "Brihadeeswara Temple",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Brihadisvara_Temple%2C_Tanjore%2C_Tamil_Nadu.jpg/800px-Brihadisvara_Temple%2C_Tanjore%2C_Tamil_Nadu.jpg",
+      "description": "Built by Raja Raja Chola I in Thanjavur."
+    }
+  ]
+}
