@@ -1,64 +1,46 @@
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 40px;
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  position: sticky;
+/* Styles/Header.css */
+
+.main-header {
+  background-color: #1e3d59;
+  color: white;
+  padding: 15px 30px;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo */
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Search Bar */
-.search-bar {
-  flex: 1;
+.header-content {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  position: relative;
 }
 
-.search-bar input {
-  width: 300px;
-  padding: 8px 14px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  outline: none;
-  font-size: 14px;
-}
-
-.search-bar button {
-  padding: 8px 16px;
-  border-radius: 20px;
+.search-wrapper input {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 4px;
   border: none;
-  background-color: #ffcc00;
-  font-weight: bold;
+  width: 300px;
+}
+
+.login-wrapper {
+  position: absolute;
+  right: 0;
+}
+
+.login-wrapper button {
+  background-color: #ffb703;
+  color: #1e3d59;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.search-bar button:hover {
-  background-color: #e6b800;
-}
-
-/* Login */
-.login-btn {
-  background-color: transparent;
-  border: 1px solid #333;
-  padding: 6px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.login-btn:hover {
-  background-color: #333;
-  color: #fff;
+.login-wrapper button:hover {
+  background-color: #ffa200;
 }
