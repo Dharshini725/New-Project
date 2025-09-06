@@ -1,0 +1,54 @@
+/* src/Styles/AboutCard.css */
+.about-card-container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to bottom, #000000, #1e3d59);
+  }
+  
+  .about-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .about-card-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ffb703;
+  }
+  
+  .about-card-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .about-card-cta {
+    background-color: #ffb703;
+    color: #1e3d59;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .about-card:hover .about-card-cta {
+    background-color: #ffcc00;
+    transform: scale(1.05);
+  }
