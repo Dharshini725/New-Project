@@ -1,0 +1,41 @@
+.hero-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;  /* <-- change this from -1 to 0 */
+}
+.hero-overlay {
+  position: relative; /* <-- make overlay above video */
+  z-index: 1;
+}
+
+.hero-quote {
+  font-size: 2rem;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  background-color: #ffcc00;
+  color: black;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #ffaa00;
+}
