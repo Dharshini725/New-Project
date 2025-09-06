@@ -1,15 +1,16 @@
 // src/pages/Homepage.tsx
-//import React, { useState } from "react";
-//import { useNavigate } from "react-router-dom";
 import Header from "../Pages/Header"; // ✅ Make sure path is correct
 import "../Styles/Homepage.css";
+import PopularSites from "../Components/PopularSites";
 
 const Homepage: React.FC = () => {
- 
   return (
     <>
+      {/* Top navigation/header */}
       <Header /> 
-    
+
+      {/* Popular sites section (your friend's work) */}
+      <PopularSites />
     </>
   );
 };
