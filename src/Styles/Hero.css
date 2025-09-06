@@ -14,15 +14,28 @@
   object-fit: cover;
   z-index: 0;  /* <-- change this from -1 to 0 */
 }
-.hero-overlay {
-  position: relative; /* <-- make overlay above video */
-  z-index: 1;
-}
 
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3); /* keep a slight dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* ✅ centers vertically */
+  align-items: center;      /* ✅ centers horizontally */
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
 .hero-quote {
   font-size: 2rem;
+  font-weight: bold;
   max-width: 800px;
   margin-bottom: 20px;
+  color: white;  /* ✅ make sure it's visible */
 }
 
 .explore-btn {
