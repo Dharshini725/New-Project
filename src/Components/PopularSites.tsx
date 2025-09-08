@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./PopularSites.css";
+import "../Styles/PopularSites.css";
 
 const popularSites = [
   {
     name: "Taj Mahal",
     location: "Agra, India",
-    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg", // ✅ Already has image
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg", 
   },
   {
     name: "Qutub Minar",
@@ -16,7 +16,7 @@ const popularSites = [
   {
     name: "Hawa Mahal",
     location: "Jaipur, India",
-    image: "https://t3.ftcdn.net/jpg/02/16/44/20/360_F_216442060_oORACP7fDjwMhUITLLQy4RTNc0xGpJwU.jpg", // 🔹 Add your own image link here
+    image: "https://t3.ftcdn.net/jpg/02/16/44/20/360_F_216442060_oORACP7fDjwMhUITLLQy4RTNc0xGpJwU.jpg", 
   },
   {
     name: "Gateway of India",

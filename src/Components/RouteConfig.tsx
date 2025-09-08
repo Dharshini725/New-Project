@@ -2,7 +2,8 @@ import React from 'react'
 import { BrowserRouter , Route, Routes } from 'react-router-dom';
 import Homepage from '../Pages/Homepage';
 import AboutPage from "../Pages/AboutPage";
-
+import LoginPage from "../Pages/LoginPage";
+import VisitedPlaces from "../Components/VisitedPlaces";
 const RouteConfig = () => {
   return (
    
@@ -10,6 +11,8 @@ const RouteConfig = () => {
        <Routes >
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/visited-places" element={<VisitedPlaces />} />
       </Routes>
       </BrowserRouter>
      
