@@ -1,5 +1,4 @@
-// src/Pages/LoginPage.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/LoginPage.css";
 
@@ -10,9 +9,25 @@ const LoginPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (username.trim()) {
-      // Save username and redirect to visited places
+      const userKey = `user_${username.trim()}`;
+      
+      // Check if user exists in localStorage
+      const existingUser = localStorage.getItem(userKey);
+      
+      if (!existingUser) {
+        // Initialize visited places for new user
+        const userData = {
+          username: username.trim(),
+          visitedPlaces: []
+        };
+        localStorage.setItem(userKey, JSON.stringify(userData));
+      }
+      
+      // Set current user session
       localStorage.setItem("currentUser", username.trim());
-      navigate("/visited-places");
+      
+      // Redirect to visited places
+      navigate("/profile");
     }
   };
 

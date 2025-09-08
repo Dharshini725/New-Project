@@ -3,6 +3,7 @@ import { BrowserRouter , Route, Routes } from 'react-router-dom';
 import Homepage from '../Pages/Homepage';
 import AboutPage from "../Pages/AboutPage";
 import LoginPage from "../Pages/LoginPage";
+import ProfilePage from "../Pages/ProfilePage";
 import VisitedPlaces from "../Components/VisitedPlaces";
 const RouteConfig = () => {
   return (
@@ -13,6 +14,8 @@ const RouteConfig = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/visited-places" element={<VisitedPlaces />} />
+        <Route path="/profile" element={<ProfilePage />} />
+
       </Routes>
       </BrowserRouter>
      
