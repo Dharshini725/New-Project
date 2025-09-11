@@ -1,57 +1,39 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import "../Styles/LoginPage.css";
+import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import "../Styles/LoginPage.css"
 
 const LoginPage: React.FC = () => {
-  const [username, setUsername] = useState("");
-  const navigate = useNavigate();
+  const [name, setName] = useState("")
+  const navigate = useNavigate()
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (username.trim()) {
-      const userKey = `user_${username.trim()}`;
-      
-      // Check if user exists in localStorage
-      const existingUser = localStorage.getItem(userKey);
-      
-      if (!existingUser) {
-        // Initialize visited places for new user
-        const userData = {
-          username: username.trim(),
-          visitedPlaces: []
-        };
-        localStorage.setItem(userKey, JSON.stringify(userData));
-      }
-      
-      // Set current user session
-      localStorage.setItem("currentUser", username.trim());
-      
-      // Redirect to visited places
-      navigate("/profile");
+  const handleLogin = () => {
+    if (name.trim()) {
+      localStorage.setItem("currentUser", name.trim())
+      window.dispatchEvent(new Event("user-changed"))
+      navigate("/")
     }
-  };
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem("currentUser")
+    localStorage.removeItem("visitedPlaces")
+    window.dispatchEvent(new Event("user-changed"))
+    navigate("/")
+  }
 
   return (
-    <div className="login-page-container">
-      <div className="login-form-container">
-        <h2>Login to HeritageXplore</h2>
-        <form onSubmit={handleSubmit} className="login-form">
-          <div className="form-group">
-            <label htmlFor="username">Enter Your Name:</label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Your name"
-              required
-            />
-          </div>
-          <button type="submit" className="login-btn">Continue</button>
-        </form>
-      </div>
+    <div className="login-container">
+      <h1>Login</h1>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogout} className="logout-btn">Logout</button>
     </div>
-  );
-};
+  )
+}
 
-export default LoginPage;
+export default LoginPage

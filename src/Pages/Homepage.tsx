@@ -1,7 +1,7 @@
 // src/pages/Homepage.tsx
 import Header from "../Pages/Header"; // ✅ Make sure path is correct
 import "../Styles/Homepage.css";
-import PopularSites from "../Components/PopularSites";
+import PopularSites from "../Pages/PopularSites";
 import Hero from "../Pages/Hero";
 import AboutCard from "../Components/AboutCard";
 
@@ -11,7 +11,7 @@ const Homepage: React.FC = () => {
       {/* Top navigation/header */}
       <Header /> 
 
-      {/* Popular sites section (your friend's work) */}
+      
       <PopularSites />
        <Hero />
        <AboutCard />

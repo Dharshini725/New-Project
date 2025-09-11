@@ -1,22 +1,31 @@
-import "../Styles/Header.css";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import "../Styles/Header.css"
+import React, { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 const Header: React.FC = () => {
-  const [location, setLocation] = useState("");
-  const navigate = useNavigate();
+  const [location, setLocation] = useState("")
+  const [username, setUsername] = useState<string | null>(null)
+  const navigate = useNavigate()
 
-  const handleStartJourney = () => {
+  // Load user on mount
+  useEffect(() => {
+    const loadUser = () => setUsername(localStorage.getItem("currentUser"))
+    loadUser()
+    window.addEventListener("user-changed", loadUser)
+    return () => window.removeEventListener("user-changed", loadUser)
+  }, [])
+
+  const handleStartJourney = (e?: React.FormEvent) => {
+    if (e) e.preventDefault()
     if (location.trim() !== "") {
-      const formattedLocation = location.trim().toLowerCase();
-      navigate(`/explore/${formattedLocation}`);
+      const formatted = encodeURIComponent(location.trim())
+      navigate(`/explore/${formatted}`)
+      setLocation("")
     }
-  };
+  }
 
-  // 🔹 Function to go to login page
-  const handleLogin = () => {
-    navigate("/login");
-  };
+  const handleLogin = () => navigate("/login")
+  const handleVisitedPlaces = () => navigate("/visited-places")
 
   return (
     <header className="main-header">
@@ -25,24 +34,27 @@ const Header: React.FC = () => {
           <h1>Welcome to HeritageXplore</h1>
           <p>Discover India’s Glorious Past</p>
 
-          <div className="input-group">
+          <form className="input-group" onSubmit={handleStartJourney}>
             <input
               type="text"
               placeholder="Enter a location (e.g., Delhi)"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
-            <button onClick={handleStartJourney}>Start Your Journey</button>
-          </div>
+            <button type="submit">Start Your Journey</button>
+          </form>
         </div>
 
         <div className="login-wrapper">
-          {/* 🔹 This button now redirects to LoginPage */}
-          <button onClick={handleLogin}>Login</button>
+          {username ? (
+            <button onClick={handleVisitedPlaces}>Welcome, {username}</button>
+          ) : (
+            <button onClick={handleLogin}>Login</button>
+          )}
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

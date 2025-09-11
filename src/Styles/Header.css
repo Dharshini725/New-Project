@@ -1,7 +1,7 @@
-/* Styles/Header.css */
+/* src/Styles/Header.css */
 
 .main-header {
-  background-color: #1e3d59;
+  background: #1e3d59; /* Dark blue theme */
   color: white;
   padding: 15px 30px;
   position: fixed;
@@ -9,7 +9,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header-content {
@@ -17,30 +17,75 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.search-wrapper input {
-  padding: 8px 12px;
+.search-wrapper {
+  text-align: center;
+}
+
+.search-wrapper h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #ffb703;
+}
+
+.search-wrapper p {
   font-size: 1rem;
-  border-radius: 4px;
-  border: none;
-  width: 300px;
+  color: #ddd;
+  margin-bottom: 15px;
 }
 
+.input-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.input-group input {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  width: 280px;
+  outline: none;
+}
+
+.input-group button {
+  padding: 10px 18px;
+  font-size: 1rem;
+  background-color: #ffb703;
+  color: #1e3d59;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.input-group button:hover {
+  background-color: #ffa200;
+}
+
+/* Login / Welcome button */
 .login-wrapper {
   position: absolute;
   right: 0;
 }
 
 .login-wrapper button {
-  background-color: #ffb703;
-  color: #1e3d59;
-  border: none;
+  background-color: transparent;
+  border: 2px solid #ffb703;
+  color: #ffb703;
   padding: 8px 16px;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .login-wrapper button:hover {
-  background-color: #ffa200;
+  background-color: #ffb703;
+  color: #1e3d59;
 }

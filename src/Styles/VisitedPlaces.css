@@ -1,58 +1,76 @@
-/* src/Styles/VisitedPlaces.css */
-.visited-places-container {
-  min-height: 100vh;
-  padding: 120px 20px 60px;
-  background: linear-gradient(135deg, #1e3d59 0%, #000000 100%);
-  color: white;
-}
+/* VisitedPlacesPage.css */
 
-.visited-places-content {
-  max-width: 800px;
-  margin: 0 auto;
+/* Container like LoginPage card */
+.visited-container {
+  max-width: 400px;
+  margin: 100px auto 50px auto;
+  padding: 30px 25px;
+  background: #1e3d59; /* same as LoginPage */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #ffb703;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
-.visited-places-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+/* Header */
+.visited-container h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
   color: #ffb703;
 }
 
-.visited-places-content h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.places-list {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.places-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.places-list li {
-  padding: 15px;
-  margin: 10px 0;
-  background: rgba(255, 255, 255, 0.1);
+/* Each visited place item */
+.visited-item {
+  width: 100%;
+  padding: 12px 15px;
+  background: #ffb703; /* accent like Login button */
+  color: #1e3d59;
   border-radius: 8px;
-  font-size: 1.2rem;
-  border-left: 4px solid #ffb703;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+  transition: background 0.3s ease;
 }
 
-.no-places {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+/* Hover effect */
+.visited-item:hover {
+  background: #ffd166;
 }
 
-.no-places p {
-  font-size: 1.2rem;
+/* Remove button */
+.remove-btn {
+  padding: 6px 10px;
+  background: #1e3d59;
+  color: #ffb703;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.remove-btn:hover {
+  background: #003f7f;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .visited-container {
+    margin: 50px 10px;
+    padding: 20px;
+  }
+  .visited-container h1 {
+    font-size: 1.5rem;
+  }
+  .visited-item {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
 }
