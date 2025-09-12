@@ -1,6 +1,6 @@
-import React from "react"
-import { useNavigate } from "react-router-dom"
-import "../Styles/PopularSites.css"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../Styles/PopularSites.css";
 
 const popularSites = [
   { name: "Taj Mahal", location: "Agra, India", image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg" },
@@ -8,10 +8,10 @@ const popularSites = [
   { name: "Hawa Mahal", location: "Jaipur, India", image: "https://t3.ftcdn.net/jpg/02/16/44/20/360_F_216442060_oORACP7fDjwMhUITLLQy4RTNc0xGpJwU.jpg" },
   { name: "Gateway of India", location: "Mumbai, India", image: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Historical_Gateway_Of_India.jpg" },
   { name: "Red Fort", location: "Delhi, India", image: "https://t3.ftcdn.net/jpg/01/08/02/28/360_F_108022820_QUowbWsLW7nD2CfgFxapM4QFvCkGWtWn.jpg" }
-]
+];
 
 const PopularSites: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <section className="popular-section">
@@ -25,7 +25,8 @@ const PopularSites: React.FC = () => {
               <p>{site.location}</p>
               <button
                 className="view-btn"
-                onClick={() => navigate(`/explore/${encodeURIComponent(site.name)}`)}
+                // NAVIGATE to AI details page so it triggers AI content + visited save
+                onClick={() => navigate(`/ai-details/${encodeURIComponent(site.name)}`)}
               >
                 View Details
               </button>
@@ -34,7 +35,7 @@ const PopularSites: React.FC = () => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PopularSites
+export default PopularSites;

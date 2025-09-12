@@ -17,8 +17,8 @@ const RouteConfig = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/visited-places" element={<VisitedPlaces />} />
-        {/* ✅ Correct route with param name 'siteName' */}
         <Route path="/ai-details/:siteName" element={<AIDetailsPage />} />
+        
       </Routes>
     </BrowserRouter>
   );

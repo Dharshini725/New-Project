@@ -1,31 +1,30 @@
-import "../Styles/Header.css"
-import React, { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import "../Styles/Header.css";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
-  const [location, setLocation] = useState("")
-  const [username, setUsername] = useState<string | null>(null)
-  const navigate = useNavigate()
+  const [location, setLocation] = useState("");
+  const [username, setUsername] = useState<string | null>(null);
+  const navigate = useNavigate();
 
-  // Load user on mount
   useEffect(() => {
-    const loadUser = () => setUsername(localStorage.getItem("currentUser"))
-    loadUser()
-    window.addEventListener("user-changed", loadUser)
-    return () => window.removeEventListener("user-changed", loadUser)
-  }, [])
+    const loadUser = () => setUsername(localStorage.getItem("currentUser"));
+    loadUser();
+    window.addEventListener("user-changed", loadUser);
+    return () => window.removeEventListener("user-changed", loadUser);
+  }, []);
 
   const handleStartJourney = (e?: React.FormEvent) => {
-    if (e) e.preventDefault()
+    if (e) e.preventDefault();
     if (location.trim() !== "") {
-      const formatted = encodeURIComponent(location.trim())
-      navigate(`/explore/${formatted}`)
-      setLocation("")
+      // Navigate to AI details page (site name encoded)
+      navigate(`/ai-details/${encodeURIComponent(location.trim())}`);
+      setLocation("");
     }
-  }
+  };
 
-  const handleLogin = () => navigate("/login")
-  const handleVisitedPlaces = () => navigate("/visited-places")
+  const handleLogin = () => navigate("/login");
+  const handleVisitedPlaces = () => navigate("/visited-places");
 
   return (
     <header className="main-header">
@@ -54,7 +53,7 @@ const Header: React.FC = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
