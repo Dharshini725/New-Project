@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
 
   const handleExplore = () => {
     const siteName = "Brihadeeswarar Temple"; // Hero site
-    navigate(`/explore/${encodeURIComponent(siteName)}`);
+    navigate(`/explore`);
   };
 
   return (

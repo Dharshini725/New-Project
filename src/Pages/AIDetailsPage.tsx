@@ -18,7 +18,7 @@ interface SiteData {
   facts: string[];
 }
 
-// ✅ Per-site videos
+
 const siteVideos: Record<string, string[]> = {
     "Taj Mahal": ["https://www.youtube.com/embed/49HTIoCccDY"],
     "Qutub Minar": ["https://www.youtube.com/embed/47YrmPhMeho"],
@@ -175,7 +175,7 @@ const AIDetailsPage: React.FC = () => {
       </div>
 
       <div className="ai-content">
-        {/* AI Image Gallery */}
+       
         <div className="ai-image-gallery">
           <h3>📸 AI Curated Images</h3>
           <div className="gallery-grid">
@@ -185,7 +185,7 @@ const AIDetailsPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Tabs */}
+
         <div className="ai-tab-navigation">
           {["history", "architecture", "significance", "visiting", "facts", "videos"].map((tab) => (
             <button

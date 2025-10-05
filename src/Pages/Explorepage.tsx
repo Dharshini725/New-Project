@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { useParams } from "react-router-dom"
+import "../Styles/ExplorePage.css"
 
 const ExplorePage: React.FC = () => {
   const { location } = useParams<{ location: string }>()
@@ -16,9 +17,12 @@ const ExplorePage: React.FC = () => {
   }, [location])
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Exploring {decodeURIComponent(location || "")}</h1>
-      <p>Here AI will fetch related videos, photos, and stories for {decodeURIComponent(location || "")}.</p>
+    <div className="explore-container">
+      <h1 className="explore-title">Exploring {decodeURIComponent(location || "")}</h1>
+      <p className="explore-description">
+        Here AI will fetch related videos, photos, and stories about{" "}
+        {decodeURIComponent(location || "")}.
+      </p>
     </div>
   )
 }

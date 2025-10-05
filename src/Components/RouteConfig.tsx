@@ -6,7 +6,8 @@ import AboutPage from "../Pages/AboutPage";
 import LoginPage from "../Pages/LoginPage";
 //import ProfilePage from "../Pages/ProfilePage";
 import VisitedPlaces from "../Components/VisitedPlaces";
-import AIDetailsPage from "../Pages/AIDetailsPage"; // ✅ Import AI Details Page
+import AIDetailsPage from "../Pages/AIDetailsPage";
+import Explorepage from "../Pages/Explorepage";
 
 
 const RouteConfig = () => {
@@ -18,6 +19,7 @@ const RouteConfig = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/visited-places" element={<VisitedPlaces />} />
         <Route path="/ai-details/:siteName" element={<AIDetailsPage />} />
+        <Route path="/explore" element={<Explorepage />} />
         
       </Routes>
     </BrowserRouter>

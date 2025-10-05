@@ -36,7 +36,6 @@ const AboutPage: React.FC = () => {
         {/* Features Section */}
         <div className="about-features">
           <h2>What We Offer</h2>
-          
             <p>Detailed insights about monuments and historical sites.</p>
             <p>Curated images, videos, and stories about India’s culture.</p>
             <p>Interactive features to explore heritage digitally.</p>

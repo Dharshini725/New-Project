@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     if (e) e.preventDefault();
     if (location.trim() !== "") {
       // Navigate to AI details page (site name encoded)
-      navigate(`/ai-details/${encodeURIComponent(location.trim())}`);
+      navigate("/explore");
       setLocation("");
     }
   };
