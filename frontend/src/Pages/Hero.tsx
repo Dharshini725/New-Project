@@ -1,32 +1,40 @@
+// src/Components/HeroSection.tsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../Styles/Hero.css"; 
-import btemple from "../videos/btemple.mp4"; 
+import "../Styles/Hero.css";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const navigate = useNavigate();
 
-  // 👇 function to navigate to AI Details page
-  const handleExploreClick = () => {
-    navigate("/aidetailspage", { state: { placeName: "Brihadeeswarar Temple" } });
-  };
+ const handleExplore = () => {
+  const siteName = "Brihadeeswarar Temple";
+  navigate(`/ai-details/${encodeURIComponent(siteName)}?place=Thanjavur`);
+};
+
 
   return (
-    <section className="hero-section">
-      <video autoPlay loop muted playsInline className="hero-video">
-        <source src={btemple} type="video/mp4" />
-      </video>
+    <div className="hero-container">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="hero-video"
+        src="/videos/btemple.mp4"
+      />
 
-      <div className="hero-content">
-        <h1 className="hero-title">Brihadeeswarar Temple</h1>
-        <p className="hero-subtitle">
-          Step into the magnificent world of Chola architecture and explore history with AI-powered insights.
-        </p>
-        <button className="explore-button" onClick={handleExploreClick}>
-          Explore Now
-        </button>
+      <div className="hero-overlay">
+        <h1 className="hero-quote">
+          “The Brihadeeswarar Temple – A timeless marvel of Chola architecture”
+        </h1>
+        <button
+  className="explore-btn"
+  onClick={handleExplore}
+>
+  Explore Now
+</button>
       </div>
-    </section>
+    </div>
   );
 };
 

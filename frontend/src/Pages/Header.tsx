@@ -1,27 +1,58 @@
+import "../Styles/Header.css";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
-function Header() {
-  const [searchLocation, setSearchLocation] = useState("");
+const Header: React.FC = () => {
+  const [location, setLocation] = useState("");
+  const [username, setUsername] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  const handleSearch = () => {
-    if (searchLocation.trim() !== "") {
-      navigate("/explore", { state: { location: searchLocation } });
-    }
-  };
+  useEffect(() => {
+    const loadUser = () => setUsername(localStorage.getItem("currentUser"));
+    loadUser();
+    window.addEventListener("user-changed", loadUser);
+    return () => window.removeEventListener("user-changed", loadUser);
+  }, []);
+
+ const handleStartJourney = (e?: React.FormEvent) => {
+  if (e) e.preventDefault();
+  if (location.trim() !== "") {
+    navigate(`/explore?place=${encodeURIComponent(location.trim())}`);
+    setLocation("");
+  }
+};
+
+  const handleLogin = () => navigate("/login");
+  const handleVisitedPlaces = () => navigate("/visited-places");
 
   return (
-    <header className="header">
-      <input
-        type="text"
-        placeholder="Enter a location..."
-        value={searchLocation}
-        onChange={(e) => setSearchLocation(e.target.value)}
-      />
-      <button onClick={handleSearch}>Start Your Journey</button>
+    <header className="main-header">
+      <div className="header-content">
+        <div className="search-wrapper">
+          <h1>Welcome to HeritageXplore</h1>
+          <p>Discover India’s Glorious Past</p>
+
+          <form className="input-group" onSubmit={handleStartJourney}>
+            <input
+              type="text"
+              placeholder="Enter a location (e.g., Delhi)"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
+            <button type="submit">Start Your Journey</button>
+          </form>
+        </div>
+
+        <div className="login-wrapper">
+          {username ? (
+            <button onClick={handleVisitedPlaces}>Welcome, {username}</button>
+          ) : (
+            <button onClick={handleLogin}>Login</button>
+          )}
+        </div>
+      </div>
     </header>
   );
-}
+};
 
 export default Header;

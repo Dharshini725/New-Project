@@ -48,11 +48,14 @@ const PopularSites: React.FC = () => {
               <h3>{site.name}</h3>
               <p>{site.location}</p>
               <button
-              className="view-btn"
-              onClick={() => navigate(`/ai-details/${site.name}`)}
-              >
-              View Details
-              </button>
+  className="view-btn"
+  onClick={() =>
+    navigate(`/ai-details/${site.name}/${site.location}`)
+  }
+>
+  View Details
+</button>
+
 
             </div>
           </div>
